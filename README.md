@@ -1,23 +1,23 @@
 # Pulse
-心率检测IoT
+An IoT system, sensing the heart pulse. It's the final project of the Summer Internship 2016.
 
-2016暑期实训
+[中文介绍](README_CN.md)
 
 ## Requirements
 
-* STM32f10x开发板
-* J-Link
-* 串口转USB模块
-* 心率传感器模块
+* STM32f10x board
+* J-Link suite
+* UART to USB Peripheral
+* [Pulse Sensor](http://pulsesensor.com) Peripheral
 
-## Basic Principle
+## Implementation
 
-利用心率传感器采集心率模拟量数据，对应的 STM32 的 GPIO 管脚设为模拟量输入 AIN，利用 ADC 转换为数字量，再利用 DMA 直接从 ADC 寄存器读取数据到内存，经过 CPU 相关运算之后，再把心率相关数据利用 USART1 发送到 PC 进行心率波形的展示。
+Get the heart pulse analog data by using pulse sensor, set the STM32 corresponding GPIO pin as AIN mode, convert the analog to digital data by using ADC, then read the data from ADC's register to memory by using DMA, analysis the data to get heart pulse info, finally send the heart pulse info to PC through USART1 and PC application shows the heart pulse.
 
 ## Acknowledgement
 
-感谢**邴哲松**老师的指导。
+Thanks to [邴哲松](http://www.cyembedded.com/se.asp?nowmenuid=500066)'s instructions.
 
 ## Copyright
 
-Copyright © 2016 [gaoyve](https://github.com/gaoyve). All rights reversed.
+[LICENSE](LICENSE)
